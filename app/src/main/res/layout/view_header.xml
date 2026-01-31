@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/bg_header">
+
+    <!-- Main Header -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/iv_action_icon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_menu" />
+
+        <TextView
+            android:id="@+id/tv_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:text="انباردار"
+            android:textColor="@color/text_on_primary"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <!-- Sub-header -->
+    <TextView
+        android:id="@+id/tv_warehouse_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_primary_dark"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="انبار مرکزی"
+        android:textColor="@color/text_on_primary"
+        android:textSize="14sp" />
+
+</LinearLayout>

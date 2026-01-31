@@ -1,41 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    android:padding="16dp"
+    android:background="@color/bg_main"
     tools:context=".activity.DashboardActivity">
 
-    <TextView
-        android:id="@+id/tvTotalBalance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="موجودی کل: 0"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="48dp"/>
+    <include layout="@layout/view_header" />
 
-    <Button
-        android:id="@+id/btnSubmitEntry"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ثبت ورود"
-        android:layout_marginBottom="16dp"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
 
-    <Button
-        android:id="@+id/btnSubmitExit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="ثبت خروج"
-        android:layout_marginBottom="16dp"/>
+        <!-- Gradient Card -->
+        <com.google.android.material.card.MaterialCardView
+            style="@style/AppCard.Gradient"
+            android:layout_height="112dp">
 
-    <Button
-        android:id="@+id/btnInventoryCount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="انبارگردانی"/>
+            <!-- کانتینر گرادینت -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/card_background_gradient"
+                android:padding="16dp">
+
+                <!-- خط اول -->
+                <TextView
+                    android:id="@+id/tvTotalTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="موجودی کل کالا:"
+                    android:textColor="@color/text_on_primary"
+                    android:textSize="16sp"/>
+
+                <!-- خط دوم -->
+                <TextView
+                    android:id="@+id/tvTotalValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1578 کارتن"
+                    android:textColor="@color/color_secondary"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <Button
+            android:text="ثبت ورود"
+            style="@style/AppButton.Primary"/>
+
+        <Button
+            android:text="ثبت خروج"
+            style="@style/AppButton.Primary"/>
+
+        <Button
+            android:text="انبارگردانی"
+            style="@style/AppButton.Primary"/>
+
+    </LinearLayout>
 
 </LinearLayout>

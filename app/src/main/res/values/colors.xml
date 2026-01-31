@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- ===== Brand Colors ===== -->
+    <color name="color_primary">#1E88E5</color>       <!-- آبی اصلی -->
+    <color name="color_primary_dark">#0156A1</color>
+    <color name="color_primary_light">#1E88E5</color>
+
+    <color name="color_secondary">#F4B228</color>     <!-- قرمز تاکید -->
+    <color name="color_secondary_light">#F4B228</color>
+
+    <!-- ===== Backgrounds ===== -->
+    <color name="bg_main">#FFFFFF</color>
+    <color name="bg_secondary">#EBEBEB</color>
+    <color name="bg_card">#1E88E5</color>
+    <color name="bg_header">#1E88E5</color>
+    <color name="bg_footer">#1E88E5</color>
+
+    <!-- ===== Text Colors ===== -->
+    <color name="text_primary">#1B1D1F</color>        <!-- متن اصلی -->
+    <color name="text_secondary">#45494C</color>      <!-- متن فرعی -->
+    <color name="text_hint">#ABABAB</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_on_secondary">#FFFFFF</color>
+
+    <!-- ===== Buttons ===== -->
+    <color name="btn_primary_bg">@color/color_primary</color>
+    <color name="btn_primary_text">#FFFFFF</color>
+
+    <color name="btn_secondary_bg">@color/color_secondary</color>
+    <color name="btn_secondary_text">#FFFFFF</color>
+
+    <!-- ===== Divider / Border ===== -->
+    <color name="divider">#DBDBDB</color>
+    <color name="border_light">#EDEDED</color>
+
+    <!-- ===== Status Colors ===== -->
+    <color name="success">#008000</color>
+    <color name="warning">#FFA500</color>
+    <color name="error">#DB2627</color>
+
+    <!-- ===== Transparent ===== -->
+    <color name="transparent">#00000000</color>
+    <color name="overlay">#AA000000</color>
 
     <color name="lfile_colorPrimary">#92B4F4</color>
     <color name="white">#FFFFFF</color>
@@ -70,7 +111,6 @@
     <color name="sbc_snippet_text">#ff4b4b4b</color>
     <color name="share_text">#ff000000</color>
     <color name="status_text">#ffffffff</color>
-    <color name="transparent">#00000000</color>
     <color name="viewfinder_frame">#ff000000</color>
     <color name="viewfinder_laser">#ffff0000</color>
     <color name="viewfinder_mask">#60000000</color>
