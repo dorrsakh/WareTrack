@@ -55,14 +55,17 @@
         </com.google.android.material.card.MaterialCardView>
 
         <Button
+            android:id="@+id/btnSubmitEntry"
             android:text="ثبت ورود"
             style="@style/AppButton.Primary"/>
 
         <Button
+            android:id="@+id/btnSubmitExit"
             android:text="ثبت خروج"
             style="@style/AppButton.Primary"/>
 
         <Button
+            android:id="@+id/btnInventoryCount"
             android:text="انبارگردانی"
             style="@style/AppButton.Primary"/>
 

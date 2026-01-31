@@ -10,7 +10,7 @@ import com.example.uhf.R;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private TextView tvTotalBalance;
+    private TextView tvTotalValue;
     private Button btnSubmitEntry, btnSubmitExit, btnInventoryCount;
 
     @Override
@@ -18,13 +18,13 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        tvTotalBalance = findViewById(R.id.tvTotalBalance);
+        tvTotalValue = findViewById(R.id.tvTotalValue);
         btnSubmitEntry = findViewById(R.id.btnSubmitEntry);
         btnSubmitExit = findViewById(R.id.btnSubmitExit);
         btnInventoryCount = findViewById(R.id.btnInventoryCount);
 
         // Set the total balance (for now, a static value)
-        tvTotalBalance.setText("موجودی کل: 1,250");
+        tvTotalValue.setText("1250 کارتن");
 
         btnSubmitEntry.setOnClickListener(new View.OnClickListener() {
             @Override
