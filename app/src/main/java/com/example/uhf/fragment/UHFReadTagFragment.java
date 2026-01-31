@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -161,11 +162,16 @@ public class UHFReadTagFragment extends KeyDwonFragment {
         BtInventory.setOnClickListener(new BtInventoryClickListener());
 
         initFilter(getView());
-
         initEPCTamperAlarm(getView());
+
         tv_count.setText(mContext.tagList.size() + "");
         tv_total.setText(total + "");
-        Log.i(TAG, "UHFReadTagFragment.EtCountOfTags=" + tv_count.getText());
+
+        // Check for auto-start signal
+        Intent intent = mContext.getIntent();
+        if (intent != null && intent.getBooleanExtra("AUTO_START_SCAN", false)) {
+            getView().post(this::readTag);
+        }
     }
 
     private void showNameTagDialog(final int position) {
@@ -336,11 +342,7 @@ public class UHFReadTagFragment extends KeyDwonFragment {
         stopInventory();
     }
 
-    /**
-     * 添加数据到列表中
-     *
-     * @param
-     */
+
     private void addDataToList(UHFTAGInfo info) {
         String epc = info.getEPC();
         if (StringUtils.isNotEmpty(epc)) {
@@ -384,10 +386,8 @@ public class UHFReadTagFragment extends KeyDwonFragment {
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             if (checkedId == RbInventorySingle.getId()) {
-                // 单步识别
                 inventoryFlag = 0;
             } else if (checkedId == RbInventoryLoop.getId()) {
-                // 单标签循环识别
                 inventoryFlag = 1;
             }
         }
@@ -480,9 +480,7 @@ public class UHFReadTagFragment extends KeyDwonFragment {
         cbPhase.setEnabled(enabled);
     }
 
-    /**
-     * 停止识别
-     */
+
     private void stopInventory() {
         handler.removeMessages(MSG_STOP);
         if (mContext.loopFlag) {

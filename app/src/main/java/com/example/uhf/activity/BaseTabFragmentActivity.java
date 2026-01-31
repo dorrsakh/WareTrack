@@ -65,20 +65,37 @@ public class BaseTabFragmentActivity extends FragmentActivity {
 
     }
 
-    public void initUHF() {
+//    public void initUHF() {
+//        try {
+//            mReader = RFIDWithUHFUART.getInstance();
+//        } catch (Exception ex) {
+//
+//            toastMessage(ex.getMessage());
+//
+//            return;
+//        }
+//
+//        if (mReader != null) {
+//            new InitTask().execute();
+//        }
+//    }
+    public boolean initUHF() {
         try {
             mReader = RFIDWithUHFUART.getInstance();
         } catch (Exception ex) {
-
             toastMessage(ex.getMessage());
-
-            return;
+            return false;
         }
 
         if (mReader != null) {
             new InitTask().execute();
+            return true;
         }
+
+        return false;
     }
+
+
 
 
     /**

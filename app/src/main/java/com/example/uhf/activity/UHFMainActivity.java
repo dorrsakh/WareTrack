@@ -39,14 +39,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * UHF使用demo
- * 1、在操作设备前需要调用 init()打开设备，使用完后调用 free() 关闭设备
- * 更多函数的使用方法请查看API说明文档
- *
- * @author zhopin
- * 更新于 2020年7月23日
- */
+
 public class UHFMainActivity extends BaseTabFragmentActivity {
 
     private final static String TAG = "MainActivity";
@@ -66,7 +59,20 @@ public class UHFMainActivity extends BaseTabFragmentActivity {
         initSound();
         initUHF();
         initViewPageData();
+    }
 
+    @Override
+    public boolean initUHF() {
+        boolean result = super.initUHF();
+        if (result) {
+            // Apply settings from Intent if available
+            Intent intent = getIntent();
+            if (intent.hasExtra("POWER_SETTING")) {
+                int power = intent.getIntExtra("POWER_SETTING", 30); // Default to 30 if not provided
+                mReader.setPower(power);
+            }
+        }
+        return result;
     }
 
     protected void initViewPageData() {
@@ -132,8 +138,14 @@ public class UHFMainActivity extends BaseTabFragmentActivity {
             return;
         }
 
-        List<UHFTAGInfo> uhfTagList = tagList.stream().map(namedTag -> namedTag.uhftagInfo).collect(Collectors.toList());
-        //new ExportExcelAsyncTask(this, uhfTagList).execute();
+        ArrayList<UHFTAGInfo> uhfTagList =
+                new ArrayList<>(
+                        tagList.stream()
+                                .map(namedTag -> namedTag.uhftagInfo)
+                                .collect(Collectors.toList())
+                );
+
+        new ExportExcelAsyncTask(this, uhfTagList).execute();
     }
 
     HashMap<Integer, Integer> soundMap = new HashMap<Integer, Integer>();
@@ -158,11 +170,7 @@ public class UHFMainActivity extends BaseTabFragmentActivity {
         }
     }
 
-    /**
-     * 播放提示音
-     *
-     * @param id 成功1，失败2
-     */
+
     public void playSound(int id) {
         float audioMaxVolume = am.getStreamMaxVolume(AudioManager.STREAM_MUSIC); // 返回当前AudioManager对象的最大音量值
         float audioCurrentVolume = am.getStreamVolume(AudioManager.STREAM_MUSIC);// 返回当前AudioManager对象的音量值
@@ -250,12 +258,6 @@ public class UHFMainActivity extends BaseTabFragmentActivity {
         }
 
         public void play(int speed) {
-            //speed 1-100;
-            //100-1
-            //99-10
-            //98-20
-            //97-30
-
             int t = 3;
             if (speed > 85) {
                 t = 3;
@@ -269,7 +271,6 @@ public class UHFMainActivity extends BaseTabFragmentActivity {
 
             interval = t;
             lastPlayTime = SystemClock.elapsedRealtime();
-            // Log.i("UHFRadarLocationFrag", " interval=" + interval );
         }
 
         public void stopPlay() {

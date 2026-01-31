@@ -24,6 +24,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activity.ProductEntryActivity" />
+
         <activity
             android:name="com.example.uhf.activity.UHFMainActivity"
             android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"

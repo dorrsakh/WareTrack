@@ -10,42 +10,25 @@ import com.example.uhf.R;
 
 public class DashboardActivity extends AppCompatActivity {
 
-    private TextView tvTotalValue;
-    private Button btnSubmitEntry, btnSubmitExit, btnInventoryCount;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        tvTotalValue = findViewById(R.id.tvTotalValue);
-        btnSubmitEntry = findViewById(R.id.btnSubmitEntry);
-        btnSubmitExit = findViewById(R.id.btnSubmitExit);
-        btnInventoryCount = findViewById(R.id.btnInventoryCount);
+        // --- Header Setup ---
+        TextView tvAppName = findViewById(R.id.tv_app_name);
+        tvAppName.setText("انباردار");
 
-        // Set the total balance (for now, a static value)
-        tvTotalValue.setText("1250 کارتن");
-
+        // --- Button Setup ---
+        Button btnSubmitEntry = findViewById(R.id.btnSubmitEntry);
         btnSubmitEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DashboardActivity.this, UHFMainActivity.class);
+                Intent intent = new Intent(DashboardActivity.this, ProductEntryActivity.class);
                 startActivity(intent);
             }
         });
 
-        btnSubmitExit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Functionality for submitting exit will be implemented later
-            }
-        });
-
-        btnInventoryCount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Functionality for inventory count will be implemented later
-            }
-        });
+        // Other buttons can be set up here if needed
     }
 }
