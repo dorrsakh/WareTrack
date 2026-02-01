@@ -51,12 +51,22 @@
         <item name="cardCornerRadius">12dp</item>
         <item name="cardElevation">4dp</item>
         <item name="android:layout_marginTop">8dp</item>
-        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
     </style>
 
     <!-- Primary Card Style -->
     <style name="AppCard.Primary" parent="AppCard">
         <item name="cardBackgroundColor">@color/color_primary</item>
+    </style>
+
+    <!-- Action Card (acts like a button) -->
+    <style name="AppCard.Action" parent="AppCard.Primary">
+        <item name="android:layout_height">68dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+
+        <!-- ripple -->
+        <item name="rippleColor">@color/color_primary_light</item>
     </style>
 
     <!-- Gradient Card Style -->

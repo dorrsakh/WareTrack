@@ -19,55 +19,102 @@
         <!-- Gradient Card -->
         <com.google.android.material.card.MaterialCardView
             style="@style/AppCard.Gradient"
-            android:layout_height="112dp">
+            android:layout_height="120dp">
 
             <!-- کانتینر گرادینت -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
+                android:orientation="horizontal"
                 android:background="@drawable/card_background_gradient"
-                android:padding="16dp">
+                android:padding="16dp"
+                android:gravity="center_vertical">
 
-                <!-- خط اول -->
-                <TextView
-                    android:id="@+id/tvTotalTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="موجودی کل کالا:"
-                    android:textColor="@color/text_on_primary"
-                    android:textSize="16sp"/>
+                <ImageView
+                    android:id="@+id/imgInventory"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/packages"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitCenter"
+                    android:layout_marginStart="12dp"/>
 
-                <!-- خط دوم -->
-                <TextView
-                    android:id="@+id/tvTotalValue"
-                    android:layout_width="wrap_content"
+                <!-- بخش متن -->
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="1578 کارتن"
-                    android:textColor="@color/color_secondary"
-                    android:textSize="22sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="end">
+
+                    <TextView
+                        android:id="@+id/tvTotalTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="موجودی کل کالا:"
+                        android:textColor="@color/text_on_primary"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/tvTotalValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1578 کارتن"
+                        android:textColor="@color/color_secondary"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"/>
+                </LinearLayout>
+
+                <!-- عکس (سمت چپ) -->
+
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
 
-        <Button
-            android:id="@+id/btnSubmitEntry"
-            android:text="ثبت ورود"
-            style="@style/AppButton.Primary"/>
 
-        <Button
-            android:id="@+id/btnSubmitExit"
-            android:text="ثبت خروج"
-            style="@style/AppButton.Primary"/>
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSubmitEntry"
+            style="@style/AppCard.Action">
 
-        <Button
-            android:id="@+id/btnInventoryCount"
-            android:text="انبارگردانی"
-            style="@style/AppButton.Primary"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="ثبت کالای جدید"
+                android:textColor="@color/text_on_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSubmitExit"
+            style="@style/AppCard.Action">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="خروج کالا"
+                android:textColor="@color/text_on_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardInventoryCount"
+            style="@style/AppCard.Action">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="گزارش گیری"
+                android:textColor="@color/text_on_primary"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 
