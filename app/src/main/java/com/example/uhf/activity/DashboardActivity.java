@@ -2,12 +2,13 @@ package com.example.uhf.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.MenuItem;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.uhf.R;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -20,15 +21,28 @@ public class DashboardActivity extends AppCompatActivity {
         TextView tvAppName = findViewById(R.id.tv_app_name);
         tvAppName.setText("انباردار");
 
-        // --- Button Setup ---
-//        Button btnSubmitEntry = findViewById(R.id.btnSubmitEntry);
-//        btnSubmitEntry.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(DashboardActivity.this, ProductEntryActivity.class);
-//                startActivity(intent);
-//            }
-//        });
+        // --- Footer Setup ---
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_home);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+                if (itemId == R.id.navigation_home) {
+                    // Already on the dashboard, do nothing
+                    return true;
+                } else if (itemId == R.id.navigation_profile) {
+                    // TODO: Navigate to Profile screen
+                    return true;
+                } else if (itemId == R.id.navigation_report) {
+                    // TODO: Navigate to Report screen
+                    return true;
+                }
+                return false;
+            }
+        });
+
         // --- Action Cards ---
         MaterialCardView cardSubmitEntry = findViewById(R.id.cardSubmitEntry);
         MaterialCardView cardSubmitExit = findViewById(R.id.cardSubmitExit);
