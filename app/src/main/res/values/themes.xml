@@ -1,22 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <!-- Base application theme. -->
     <style name="Base.Theme.Uhfuartdemo" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
+
+        <!-- 🎨 Colors -->
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/color_primary_dark</item>
         <item name="colorOnPrimary">@color/text_on_primary</item>
-        <!-- Secondary brand color. -->
+
         <item name="colorSecondary">@color/color_secondary</item>
         <item name="colorSecondaryVariant">@color/color_secondary_light</item>
         <item name="colorOnSecondary">@color/text_on_secondary</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+        <!-- Status bar -->
+        <item name="android:statusBarColor" tools:targetApi="l">
+            ?attr/colorPrimaryVariant
+        </item>
+
+        <!-- Background & text -->
         <item name="android:windowBackground">@color/bg_main</item>
         <item name="android:textColor">@color/text_primary</item>
-        <!-- Set default chip style -->
+
+        <!-- Font -->
+        <item name="android:fontFamily">@font/vazirmatn</item>
+        <item name="fontFamily">@font/vazirmatn</item>
+
+        <!-- Default Chip Style -->
         <item name="chipStyle">@style/AppChip</item>
+
     </style>
 
     <style name="Theme.Uhfuartdemo" parent="Base.Theme.Uhfuartdemo" />
+
 </resources>
