@@ -64,4 +64,19 @@
         <item name="cardBackgroundColor">@android:color/transparent</item>
     </style>
 
+    <!-- Custom Full Width Chip Style -->
+    <style name="AppChip" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="chipBackgroundColor">@color/bg_secondary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="closeIcon">@drawable/ic_close_minimal</item>
+        <item name="closeIconTint">@color/text_secondary</item>
+        <item name="chipCornerRadius">18dp</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:textDirection">ltr</item> <!-- Ensure EPC code is always LTR -->
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+    </style>
+
 </resources>

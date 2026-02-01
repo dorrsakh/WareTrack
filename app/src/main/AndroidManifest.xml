@@ -25,6 +25,7 @@
         </activity>
 
         <activity android:name=".activity.ProductEntryActivity" />
+        <activity android:name=".activity.NameProductActivity" />
 
         <activity
             android:name="com.example.uhf.activity.UHFMainActivity"

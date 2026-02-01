@@ -524,10 +524,7 @@ public class UHFReadTagFragment extends KeyDwonFragment {
 
     public final class ViewHolder {
         public TextView tvTag;
-        public TextView tvTagName;
         public TextView tvTagCount;
-        public TextView tvTagRssi;
-        public TextView tvPhase;
     }
 
     public class MyAdapter extends BaseAdapter {
@@ -555,10 +552,7 @@ public class UHFReadTagFragment extends KeyDwonFragment {
                 holder = new ViewHolder();
                 convertView = mInflater.inflate(R.layout.listtag_items, null);
                 holder.tvTag = (TextView) convertView.findViewById(R.id.TvTagUii);
-                holder.tvTagName = (TextView) convertView.findViewById(R.id.TvTagName);
                 holder.tvTagCount = (TextView) convertView.findViewById(R.id.TvTagCount);
-                holder.tvTagRssi = (TextView) convertView.findViewById(R.id.TvTagRssi);
-                holder.tvPhase = (TextView) convertView.findViewById(R.id.TvPhase);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -567,10 +561,7 @@ public class UHFReadTagFragment extends KeyDwonFragment {
             UHFTAGInfo uhftagInfo = namedTag.uhftagInfo;
 
             holder.tvTag.setText(mergeTidEpc(uhftagInfo));
-            holder.tvTagName.setText(namedTag.name);
             holder.tvTagCount.setText(String.valueOf(uhftagInfo.getCount()));
-            holder.tvTagRssi.setText(uhftagInfo.getRssi());
-            holder.tvPhase.setText(String.valueOf(uhftagInfo.getPhase()));
 
             if (position == mContext.selectIndex) {
                 convertView.setBackgroundColor(mContext.getResources().getColor(R.color.lfile_colorPrimary));

@@ -227,9 +227,7 @@ public class TestActivity extends Activity {
     public class MyAdapter extends BaseAdapter {
         public final class ViewHolder {
             public TextView tvEPCTID;
-            public TextView tvTagName;
             public TextView tvTagCount;
-            public TextView tvTagRssi;
         }
 
         private LayoutInflater mInflater;
@@ -251,9 +249,7 @@ public class TestActivity extends Activity {
                 holder = new  ViewHolder();
                 convertView = mInflater.inflate(R.layout.listtag_items, null);
                 holder.tvEPCTID = (TextView) convertView.findViewById(R.id.TvTagUii);
-                holder.tvTagName = (TextView) convertView.findViewById(R.id.TvTagName);
                 holder.tvTagCount = (TextView) convertView.findViewById(R.id.TvTagCount);
-                holder.tvTagRssi = (TextView) convertView.findViewById(R.id.TvTagRssi);
                 convertView.setTag(holder);
             } else {
                 holder = (ViewHolder) convertView.getTag();
@@ -262,9 +258,7 @@ public class TestActivity extends Activity {
             UHFTAGInfo uhftagInfo = namedTag.uhftagInfo;
             String epcAndTidUser=uhftagInfo.getEPC();
             holder.tvEPCTID.setText(epcAndTidUser);
-            holder.tvTagName.setText(namedTag.name);
-            holder.tvTagCount.setText(uhftagInfo.getCount()+"" );
-            holder.tvTagRssi.setText(uhftagInfo.getRssi());
+            holder.tvTagCount.setText(uhftagInfo.getCount()+"");
             return convertView;
         }
 
